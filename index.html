@@ -119,36 +119,41 @@
 
 						<hr>
 
-						<div class="form-group form-group-lg has-info has-feedback">
-							<div class="col-sm-6">
+						<div class="form-group form-group-lg has-feedback">
+							<div class="col-sm-6" id="required">
 
 								<label class="control-label" for="gaji-hakiki">Gaji Hakiki</label>
 								<div class="input-group">
 									<span class="input-group-addon">RM</span>
-		                        	<input class="form-control" type="text" id="gaji-hakiki" name="gaji-hakiki" placeholder="2010.71">
+		                        	<input class="form-control" type="text" id="gaji-hakiki" name="gaji-hakiki" placeholder="2010.71" aria-describedby="helpSalary">
 		                        </div>
+		                        <span id="helpSalary" class="hidden help-block">Sila isikan ruangan Gaji Hakiki</span>
 
 							</div>
 							<div class="col-sm-6">
 
-								<label class="control-label" for="kgt">Kenaikan Gaji Tahunan (KGT)</label>
+								<label class="control-label" for="kgt">Pergerakan Gaji Tahunan (PGT)</label>
 								<div class="input-group">
 									<span class="input-group-addon">RM</span>
 		                        	<input class="form-control" type="text" id="kgt" name="kgt" value="90" readonly>
 		                        </div>
-
+		                        <div id="collapseMaxSalary" class="collapse">
+		                        	<small>Kadar PGT berasaskan kadar tetap <b>3%</b> daripada gaji maksimum dalam <abbr title="Jadual Gaji Minimum - Maksimum">JGMM</abbr></small>
+		                        </div>
 							</div>
 						</div>
 
 						<div class="form-group form-group-lg">
-							<div class="col-sm-12">
-								<div class="checkbox">
-									<label class="control-label">
-										<input type="checkbox" name="max" id="gaji-max"> Gaji Hakiki telah  mencapai  gaji maksimum?
-									</label>
-								</div>
+							<div class="col-sm-1">
+
+								<input type="checkbox" name="max" id="gaji-max" class="form-control" aria-describedby="helpMaxSalary" disabled>
+
 							</div>
+							<label class="col-md-pull-4 col-sm-11 control-label" for="gaji-max">Gaji Hakiki telah  mencapai  gaji maksimum?</label>
+
+
 						</div>
+
 
 
 
@@ -237,6 +242,7 @@
 
     		$('[data-toggle="tooltip"]').tooltip();
 
+
     		$('#gred').on('change', function() {
 			  $('#kgt').val(this.value);
 			});
@@ -255,13 +261,24 @@
 
 			$('form').on('change', '#gaji-max', function(){
 
-                if(this.checked) {
-                    $('#kgt').val(parseFloat($('#gaji-hakiki').val())*(3/100));
+                if( $(this).is(':checked')) {
+                    $('#kgt').val(rounded(parseFloat($('#gaji-hakiki').val())*(3/100)));
+                    $('#collapseMaxSalary').collapse('show')
                 } else {
                     $('#kgt').val($('#gred').val());
+                    $('#collapseMaxSalary').collapse('hide')
                 }
 
             });
+
+			$('#gaji-hakiki').on('input', function() {
+				$('#required').removeClass('has-error');
+				if(!isNaN($(this).val()) || $(this).val() != ''){
+					$('#gaji-max').prop("disabled", false);
+				} else {
+					$('#gaji-max').prop("disabled", true);
+				}
+			});
 
 			$('#kira').on('click', function() {
 
@@ -270,18 +287,18 @@
 					, gajiPertama = 0
 					, gajiKedua = 0;
 
-				gajiMax = $('#gaji-max').is(':checked') ? true : false;
+				if (isNaN(gajiHakiki) || gajiHakiki == '') {
+					$('#required').addClass('has-error');
+				} else {
+					$('#required').removeClass('has-error');
+				}
 
 				if ($('#gaji-max').is(':checked')) {
 					kgt = gajiHakiki*(3/100);
 				}
 
 				gajiPertama = rounded(gajiHakiki+kgt);
-
-				console.log('gajiPertama: ', gajiPertama);
-
 				gajiKedua = rounded(gajiPertama+kgt);
-				console.log('gajiKedua: ', gajiKedua);
 
 				$( "#bulan-kgt" ).replaceWith($('#bulan-kenaikan').val());
 
