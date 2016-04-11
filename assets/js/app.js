@@ -30,6 +30,8 @@ $(function() {
             .val('')
             .removeAttr('checked')
             .removeAttr('selected');
+
+         $('#gaji-hakiki').focus();
     });
 
     $('form').on('change', '#gaji-max', function() {
@@ -57,12 +59,9 @@ $(function() {
 
         var gajiHakiki = parseFloat($('#gaji-hakiki').val()),
             kgt = parseFloat($('#kgt').val()),
-            kgt1julai = parseFloat($('#gred').find(':selected').attr('data-kgt')),
             tpg = parseFloat($('#tpg').val()),
             gaji30jun = 0,
             gaji1julai = 0;
-
-        kgt1julai = isNaN(kgt1julai) ? 0 : kgt1julai;
 
         if (isNaN(gajiHakiki) || gajiHakiki == '') {
             $('.required')
@@ -96,13 +95,12 @@ $(function() {
 	    }, 500);
 
         if (isNaN(gaji30jun)) {
-            $('#gaji30jun, #gaji1julai, #kgt1julai').text('RM 0.00');
+            $('#gaji30jun, #gaji1julai').text('RM 0.00');
         } else {
             $('#gaji30jun').text("RM " + gaji30jun.toLocaleString('ms'));
             $('#gaji1julai').text("RM " + gaji1julai.toLocaleString('ms'));
-            $('#kgt1julai').text("RM " + kgt1julai.toLocaleString('ms'));
 
-            $('#gaji30jun, #gaji1julai, #kgt1julai').animate({
+            $('#gaji30jun, #gaji1julai').animate({
                 fontSize: "32px"
             }, 1000);
         }
