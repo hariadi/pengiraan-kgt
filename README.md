@@ -2,11 +2,11 @@
 
 Pengiraan Pemindahan Kenaikan Gaji Tahunan (KGT) ini meliputi Pekeliling Perkhidmatan Bilangan 1 Tahun 2016: Rasionalisasi Skim Perkhidmatan Bagi Perhidmatan Awam Persekutuan Di Bawah Sistem Saraan Malaysia.
 
-# Objektif
+## Objektif
 
-Pengiraan untuk mendapatkan gaji hakiki pada 30 Jun 2016 dan 1 Julai 2016.
+Pengiraan untuk mendapatkan Gaji Hakiki pada `30 Jun 2016` dan `1 Julai 2016`.
 
-# Carta Alir Pelaksanaan Pemberian Faedah Pemindahan Gaji
+## Carta Alir Pelaksanaan Pemberian Faedah Pemindahan Gaji
 
 *TODO*
 
