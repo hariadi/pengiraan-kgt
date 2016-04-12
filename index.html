@@ -65,13 +65,13 @@
 				type: "warning",
 				showCancelButton: true,
 				confirmButtonColor: "#DD6B55",
-				confirmButtonText: "Takpe, saya faham dan setuju",
+				confirmButtonText: "Orait, saya faham dan setuju!",
 				cancelButtonText: "Batal",
 				closeOnConfirm: false,
 				html: true
 			},
 			function(){
-				Cookies.set('confirm', true, { expires: 365 });
+				Cookies.set('confirm', true, { path: '/kgt', expires: 365 });
 				window.location.href = "kira.html";
 			});
 		});
