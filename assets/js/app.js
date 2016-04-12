@@ -1,5 +1,10 @@
 $(function() {
 
+	if (!Cookies.get('confirm')) {
+		console.log('I don\'t care. You need to accept disclaimer first');
+		window.location.replace('/kgt/');
+	}
+
     ringgit = function (duit) {
         return duit.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
     }

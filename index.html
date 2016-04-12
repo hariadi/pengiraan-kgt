@@ -8,7 +8,7 @@
 	|    |  \    \_\  \ |    |
 	|____|__ \______  / |____|
 			\/      \/
-	@hariadi: https://github.com/jpagov/pengiraan-kgt (PR)
+	sumber: https://github.com/hariadi/pengiraan-kgt
 	-->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,6 +46,7 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
     <script src="assets/js/sweetalert.min.js"></script>
+    <script src="assets/js/js.cookie.min.js"></script>
     <script>
 
     	!function(h,a,r,I,A,d,i){h.GoogleAnalyticsObject=r;h[r]||(h[r]=function(){
@@ -59,20 +60,21 @@
     	$(function() {
 
 			swal({
-				title: "MAKLUMAN",
-				text: "Hasil kalkulator ini hanya sebagai anggaran sahaja dan tidak boleh diguna pakai sebagai rujukan dan masih menggunakan sumber data daripada KGT Pekeliling Perkhidmatan Bil. 2/2015",
+				title: "PENAFIAN",
+				text: "Hasil kalkulator ini hanya sebagai <b>anggaran</b> sahaja dan <b>tidak boleh diguna pakai sebagai rujukan</b>. Aplikasi ini menggunakan sumber data daripada KGT <b>Pekeliling Perkhidmatan Bil. 2/2015</b>. Sebarang kesilapan anggaran atas tanggungjawab sendiri. Penafian yang dikeluarkan adalah tertakluk kepada perubahan tanpa notis.",
 				type: "warning",
 				showCancelButton: true,
 				confirmButtonColor: "#DD6B55",
-				confirmButtonText: "Ya, saya faham",
+				confirmButtonText: "Takpe, saya faham dan setuju",
 				cancelButtonText: "Batal",
-				closeOnConfirm: false
+				closeOnConfirm: false,
+				html: true
 			},
 			function(){
+				Cookies.set('confirm', true, { expires: 365 });
 				window.location.href = "kira.html";
 			});
 		});
     </script>
 </body>
-
 </html>
