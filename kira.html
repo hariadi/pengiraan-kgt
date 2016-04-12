@@ -48,15 +48,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-                <a itemprop="url" class="navbar-brand" href="/smp/">
-
-                    <img itemprop="logo" height="28" alt="Jata Negara" src="https://sistem.jpa.gov.my/smp/themes/default/assets/img/jpa-101pxx119px.png">
-
-                    <h1><span class="sr-only" itemprop="name">Pengiraan Pemindahan Gaji</span></h1>
+                <a itemprop="url" class="navbar-brand" href="/">
+                    <span itemprop="name">Pengiraan Pemindahan Gaji</span>
                 </a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
-                <p class="navbar-text">Jabatan Perkhidmatan Awam</p>
+
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="http://www.jpa.gov.my">Portal JPA</a></li>
                     <li class="active"><a href="https://sistem.jpa.gov.my/maklumbalas">Maklumbalas</a></li>
@@ -70,6 +67,26 @@
     <div class="container">
 
         <div class="row">
+        	<div class="col-md-12">
+        		<div class="alert alert-warning">
+        			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					  <span aria-hidden="true">&times;</span>
+					</button>
+
+            		<b>Hasil kalkulator ini hanya sebagai anggaran sahaja dan tidak boleh diguna pakai sebagai rujukan. Sumber data diperolehi daripada KGT Pekeliling Perkhidmatan Bil. 2/2015</b>
+
+            	</div>
+            	<div class="alert alert-info">
+            		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					  <span aria-hidden="true">&times;</span>
+					</button>
+
+            		<p>Pekeliling Perkhidmatan Bil. 1/2016: Rasionalisasi Skim Perkhidmatan Bagi Perhidmatan Awam Persekutuan Di Bawah Sistem Saraan Malaysia akan diedarkan di laman web JPA pada 14 April 2016 (<a href="http://www.utusan.com.my/berita/nasional/jpa-edar-pekeliling-tambah-baik-252-skim-perkhidmatan-awam-14-april-ini-1.240089">Utusan</a>)
+            		</p>
+
+            	</div>
+        	</div>
+
             <div class="col-md-8">
                 <h1 id="pengiraan">Pengiraan Pemindahan Gaji</h1>
                 <form class="form-horizontal" id="pengiraan-kgt">
@@ -167,7 +184,7 @@
 
                         <div class="form-group form-group-lg">
                             <div class="col-sm-6">
-                                <button type="button" class="btn btn-primary input-lg" id="kira">Kira Pemindahan Gaji</button>
+                                <button type="button" class="btn btn-primary input-lg" id="kira">Kira</button>
                                 <button type="button" class="btn btn-warning input-lg" id="reset">Semula</button>
                             </div>
                         </div>
@@ -191,10 +208,6 @@
             </div>
 
             <div class="col-md-4" id="result">
-
-            	<div class="alert alert-warning">
-            		<p>Hasil kalkulator ini hanya sebagai anggaran sahaja dan tidak boleh diguna pakai sebagai rujukan</p>
-            	</div>
 
                 <h2><small>Gaji Pada</small> 30 <span id="bulan-kgt">Jun</span> 2016</h2>
                 <p class="alert alert-info" id="gaji30jun">RM 0.00</p>
