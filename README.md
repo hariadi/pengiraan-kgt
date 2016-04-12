@@ -2,13 +2,19 @@
 
 Pengiraan Pemindahan Kenaikan Gaji Tahunan (KGT) ini meliputi Pekeliling Perkhidmatan Bilangan 1 Tahun 2016: Rasionalisasi Skim Perkhidmatan Bagi Perhidmatan Awam Persekutuan Di Bawah Sistem Saraan Malaysia.
 
-## Objektif
+Aplikasi ini mula dibangunkan pada [1 April 2012](http://web.archive.org/web/20120501000000*/http://docs.jpa.gov.my/ssm/) bagi memudahkan pengguna membuat pengiraan kenaikan gaji mengikut Pekeliling Perkhidmatan 1 Tahun 2012.
 
-Pengiraan untuk mendapatkan Gaji Hakiki pada `30 Jun 2016` dan `1 Julai 2016`.
+## Apa aplikasi ini boleh buat?
+
+- [x] Pengiraan untuk mendapatkan Gaji Hakiki / Pokok pada `30 Jun 2016`
+- [x] Pengiraan untuk mendapatkan Gaji Hakiki / Pokok pada `1 Julai 2016`
+- [x] Ambil kira jika gaji mencecah gaji maksimum (KGT 3% mengikut PP Bil. 36/2013)
+- [ ] Ambil kira jika gaji dibawah RM1200 (tunggu PP Bil. 1/2016 sebab nak tahu minimum gaji untuk semua gred - ideanya nak letak sebagai data attribute `data-min`)
+- [ ] Papar kaedah / tatacara dan dokumen berkaitan Skim yang dipilih (lampiran / borang opsyen).
 
 ## Carta Alir Pelaksanaan Pemberian Faedah Pemindahan Gaji
 
-*TODO*
+*tunggu PP Bil. 1/2016*
 
 ## Rujukan
 
